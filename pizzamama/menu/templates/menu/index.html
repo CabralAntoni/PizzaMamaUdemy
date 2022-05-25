@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'menu/style.css' %}">
+    <title>Menu des pizzas</title>
+</head>
+<body>
+
+    <img id="smallLogo" src="{% static 'menu/images/small_logo.png' %}">
+    <div class="menuTitle">
+        <h1>Les pizzas</h1>
+    </div>
+
+    <div class="menuList">
+        {% for pizza in pizzas %}
+        <div class="menuListItem">
+            <span class="menuListTitle">{{pizza.nom}}</span>
+            <span class="menuListPrice">{{pizza.prix}}€</span>
+            <span class="menuListIngredients">{{pizza.ingredients}}€</span>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
