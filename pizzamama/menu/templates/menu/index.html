@@ -17,8 +17,13 @@
         {% for pizza in pizzas %}
         <div class="menuListItem">
             <span class="menuListTitle">{{pizza.nom}}</span>
-            <span class="menuListPrice">{{pizza.prix}}€</span>
-            <span class="menuListIngredients">{{pizza.ingredients}}€</span>
+            <span class="menuListPrice">{{pizza.prix | floatformat:2 }}€</span>
+            <br>
+            <span class="menuListIngredients">{{pizza.ingredients}}</span>
+            <br>
+            {% if pizza.vegetarienne %}
+                <span class="menuListBadge">VÉGÉTARIENNE</span>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
